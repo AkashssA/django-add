@@ -11,9 +11,10 @@ def add_numbers(request):
 
         try:
             sum = float(num1) + float(num2)
+            # sum = num1+num2
             result = f"The sum is: {sum}"
-        except:
-            error = "Something went wrong"
+        except Exception as e:
+            error = f"Something went wrong in boot {e}"
 
     return render(request, 'add.html', {'result': result, 'error': error}) 
 
